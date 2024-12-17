@@ -30,6 +30,7 @@ The speedup graphs do not use the visual mode as it slows the speedups with cons
 
 ## PROJECT DESCRIPTION
 ![alt text](<imgs/Real-Time Particle Updates.gif>)
+
 Barnes Hut Algorithm is an approximation algorithm for N-Body simulation. N-Body simulation is a simulation of the system of particles under a force such as gravity. This project simulates the N-Body problem in 2-D space, calculating the position of particles (unit mass) in each time-step, where each particle experiences a net force from all the other particles in the space. 
 
 N-Body simulation is a very important simulation in Physics, especially Astrophysics. The naive solution to the N-Body problem is of O(N^2) time complexity where we calculate the forces on each particle due to all the other particles in space.
