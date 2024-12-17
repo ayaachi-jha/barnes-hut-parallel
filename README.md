@@ -39,10 +39,10 @@ Barnes Hut Algorithm is an approximation algorithm which solves the N-Body probl
 For visualization, the algorithm divides the 2-D space into quadrants using a `Quad Tree`, such that each quadrant at the smallest level only contains 1 particle, and each particle only needs to calculate the force of the particles in the nearby quadrants and approximate the force from the particles in distant quadrants using the center of mass of the larger quadrant containing those far-away particles. With a correct choice of `s/D` ratio (where `s` is the size of the quadrant and `D` is the distance of the particles from that quadrant) we can define what is a good choice for skipping individual particles and calculating the force using the center of mass of the quadrant. This improves the performance significantly while also giving a reasonable accuracy in force calculation.
 
 The image below shows a representation of the Quad Tree built for Barnes Hut Algorithm, where each quadrant is a node and particles are present in the leaf nodes while the parent quadrants are the parent nodes.
-![alt text](<imgs/Barnes-Hut-Quad.png>)
-![alt text](<imgs/Quad-Tree.png>)
-<!-- <img src="imgs/Barnes-Hut-Quad.png" width=600 height=600>
-<img src="imgs/Quad-Tree.png" width=600 height=550> -->
+
+<img src="imgs/Barnes-Hut-Quad.png" width=500 height=500>
+<img src="imgs/Quad-Tree.png" width=500 height=350>
+
 Reference: https://www.cs.princeton.edu/courses/archive/fall03/cs126/assignments/barnes-hut.html
 
 While calculating forces on the particles in the tree above, for example, let's say for particle `a`, we can define a `s/D` such that it might see that the quadrant to the right are too close and calculates the forces by individual particles `c`, `b` and `d`, but might find the quadrant below (containing `e`, `f` and `g`) to be too far and doesn’t traverse that parent quadrant further and calculates the force using the center of mass of the parent quadrant for these 3 particles which would be stored in the parent node of these particles, thus avoiding unnecessary extra traversals for trivial accuracy gains.
